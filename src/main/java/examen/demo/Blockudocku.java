@@ -18,6 +18,29 @@ public class Blockudocku {
         }
     }
 
+    public Boolean isFila(Integer fila) {
+        for(int j=0; j < 9; j++){
+            if(this.board[fila][j] == 0) return Boolean.FALSE;
+        }
+        return Boolean.TRUE;
+    }
+
+    public Boolean isColumna(Integer columna) {
+        for(int i=0; i < 9; i++){
+            if(this.board[i][columna] == 0) return Boolean.FALSE;
+        }
+        return Boolean.TRUE;
+    }
+
+    public Boolean isBloque(Integer segmento) {
+        for(int i=segmento+4; i < segmento+4; i++){
+            for(int j=segmento-2; j < segmento-2; j++){
+                if(board[i][j] == 0) return Boolean.FALSE;
+            }
+        }
+        return Boolean.TRUE;
+    }
+
     public void insertABlock(String piece, Integer x, Integer y){
         char c = piece.charAt(0);
         this.board[x][y] = c;
