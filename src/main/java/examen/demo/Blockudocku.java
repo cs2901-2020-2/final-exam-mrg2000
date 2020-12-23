@@ -7,6 +7,7 @@ public class Blockudocku {
     static final Logger logger = Logger.getLogger(Blockudocku.class.getName());
 
     int [][] board = {{0,0,0,0,0,0,0,0,0},{0,0,0,0,0,0,0,0,0},{0,0,0,0,0,0,0,0,0},{0,0,0,0,0,0,0,0,0},{0,0,0,0,0,0,0,0,0},{0,0,0,0,0,0,0,0,0},{0,0,0,0,0,0,0,0,0},{0,0,0,0,0,0,0,0,0},{0,0,0,0,0,0,0,0,0}};
+    Integer totalScore = 0;
 
     public void printBoard(){
         for(int i=0; i < 9; i++){
@@ -44,6 +45,8 @@ public class Blockudocku {
     public void insertABlock(String piece, Integer x, Integer y){
         char c = piece.charAt(0);
         this.board[x][y] = c;
+        if(isColumna(y) || isFila(x)) totalScore += 120;
+        if(Boolean.TRUE.equals(isBloque(x))) totalScore += 150;
         deleteBlock(x,y);
     }
 
