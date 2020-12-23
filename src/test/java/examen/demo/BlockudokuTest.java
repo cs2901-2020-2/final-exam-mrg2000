@@ -60,4 +60,24 @@ public class BlockudokuTest {
         String input = " ";
         Assert.assertFalse(blockudocku.selectNewGame(new Scanner(input)));
     }
+
+    @Test
+    public void piecesTestCase() {
+        Piezas piezas = new Piezas();
+        int[][] piezaA = {{1,1,0},{1,1,0},{0,0,1}};
+        int[][] piezaB = {{1,1,0},{1,1,0},{0,0,1}};
+        int[][] piezaC = {{0,1,0},{0,1,0},{1,0,1}};
+        int[][] piezaD = {{0,1,0},{0,1,0},{0,0,1}};
+        int[][] piezaE = {{0,1,0},{0,1,0},{0,0,1}};
+        int[][] piezaF = {{1,1,0},{1,1,0},{0,0,1}};
+        int[][] piezaG = {{1,1,0},{0,1,1},{0,0,1}};
+        int[][] piezaH = {{0,0,0},{0,1,0},{0,0,1}};
+        Assert.assertEquals(piezas.piezaA(), piezaA);
+        Assert.assertEquals(piezas.piezaB(), piezaB);
+        Assert.assertEquals(piezas.piezaC(), piezaC);
+        Assert.assertEquals(piezas.piezaD(), piezaD);
+        Assert.assertEquals(piezas.piezaE(), piezaE);
+        Assert.assertEquals(piezas.piezaF(), piezaF);
+        Assert.assertEquals(piezas.piezaG(), piezaG);
+    }
 }
